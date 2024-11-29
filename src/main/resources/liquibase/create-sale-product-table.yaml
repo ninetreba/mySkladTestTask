@@ -1,0 +1,39 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: create-sale-product
+      author: netreba
+      changes:
+        - createTable:
+            tableName: sale_product
+            columns:
+              - column:
+                  name: id_sale_product
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: document_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: count_of_product
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price_of_sale
+                  type: bigint
+                  constraints:
+                    nullable: true
+              - column:
+                  name: product_ref
+                  type: bigint
+                  constraints:
+                    foreignKeyName: product_ref
+                    referencedTableName: product
+                    referencedColumnNames: id_product
+                    nullable: false
