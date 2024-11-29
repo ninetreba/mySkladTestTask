@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - include:
+      file: liquibase/create-product-table.yaml
+
+  - include:
+      file: liquibase/insert-data-product.xml
+
+

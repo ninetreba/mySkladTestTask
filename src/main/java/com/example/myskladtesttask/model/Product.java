@@ -1,5 +1,6 @@
 package com.example.myskladtesttask.model;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -8,8 +9,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
+@Table(name = "product")
 public class Product {
 
+    @Id
+    @Column(name = "id_product")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull(message = "Product name is required")
@@ -22,6 +28,7 @@ public class Product {
     @Min(value = 0, message = "Price cannot be less than 0")
     private int price = 0;
 
+    @Column(name = "available")
     private boolean isAvailable = false;
 
 
@@ -39,3 +46,4 @@ public class Product {
 
 
 }
+
