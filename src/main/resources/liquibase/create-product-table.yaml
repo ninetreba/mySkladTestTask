@@ -1,0 +1,36 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: create-product
+      author: netreba
+      changes:
+        - createTable:
+            tableName: product
+            columns:
+              - column:
+                  name: id_product
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(4096)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: available
+                  type: boolean
+                  constraints:
+                    nullable: false
