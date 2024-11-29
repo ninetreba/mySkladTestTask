@@ -26,6 +26,8 @@ public class ProductService {
         productList.add(new Product(PRODUCT_COUNT++,"phone", "new phone", 17500, false));
         productList.add(new Product(PRODUCT_COUNT++,"laptop", "new laptop", 98000, true));
 
+        System.out.println("hello");
+
     }
 
 
@@ -70,6 +72,7 @@ public class ProductService {
 
         return product;
     }
+
 
 
 
