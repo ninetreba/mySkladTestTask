@@ -1,0 +1,34 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: create-delivery-product
+      author: netreba
+      changes:
+        - createTable:
+            tableName: delivery_product
+            columns:
+              - column:
+                  name: id_delivery_product
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: document_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: count_of_product
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: product_ref
+                  type: int
+                  constraints:
+                    foreignKeyName: product_ref
+                    referencedTableName: product
+                    referencedColumnNames: id_product
+                    nullable: false

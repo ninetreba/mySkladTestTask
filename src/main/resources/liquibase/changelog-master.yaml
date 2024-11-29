@@ -5,4 +5,13 @@ databaseChangeLog:
   - include:
       file: liquibase/insert-data-product.xml
 
+  - include:
+      file: liquibase/create-sale-product-table.yaml
+
+  - include:
+      file: liquibase/create-delivery-product-table.yaml
+
+  - include:
+      file: liquibase/insert-data-delivery-product.xml
+
 
