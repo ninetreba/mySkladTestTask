@@ -52,4 +52,73 @@ public class ProductController {
 
 
 
+
+    @GetMapping("/search/availableTrue")
+    public List<Product> findAllByisAvailableTrue() {
+        return productService.findAllByisAvailableTrue();
+    }
+
+    @GetMapping("/search/availableFalse")
+    public List<Product> findAllByisAvailableFalse() {
+        return productService.findAllByisAvailableFalse();
+    }
+
+
+
+    @GetMapping("/search/name/{name}")
+    public List<Product> findAllByName(@PathVariable String name) {
+        return productService.findAllByName(name);
+    }
+
+    @GetMapping("/search/nameContaining/{namelike}")
+    public List<Product> findByNameContaining(@PathVariable String namelike) {
+        return productService.findByNameContaining(namelike);
+    }
+
+
+
+    @GetMapping("/search/price/{price}")
+    public List<Product> findByPrice(@PathVariable int price) {
+        return productService.findByPrice(price);
+    }
+
+    @GetMapping("/search/priceMoreThan/{price}")
+    public List<Product> findByPriceGreaterThan(@PathVariable int price) {
+        return productService.findByPriceGreaterThan(price);
+    }
+
+    @GetMapping("/search/priceMoreLess/{price}")
+    public List<Product> findByPriceLessThan(@PathVariable int price) {
+        return productService.findByPriceLessThan(price);
+    }
+
+
+
+    @GetMapping("sort/price")
+    public List<Product> findByOrderByPriceAsc() {
+        return productService.findByOrderByPriceAsc();
+    }
+
+    @GetMapping("sort/name")
+    public List<Product> findByOrderByNameAsc() {
+        return productService.findByOrderByNameAsc();
+    }
+
+
+
+    @GetMapping("findAndSort/priceGreaterSort/{price}")
+    public List<Product> findByPriceGreaterThanOrderByNameDesc(@PathVariable int price) {
+        return productService.findByPriceGreaterThanOrderByNameDesc(price);
+    }
+
+    @GetMapping("/findAndSort/nameSort/{name}/{limit}")
+    public List<Product> findByNameSortLimit(@PathVariable String name, @PathVariable int limit) {
+        return productService.findByNameSortLimit(name, limit);
+    }
+
+
+
+
+
+
 }
